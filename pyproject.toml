@@ -4,7 +4,7 @@ version = "0.1.0.dev0"
 description = "The llm_toolz Python package."
 readme = "README.md"
 authors = [
-  { name="MY_NAME", email="MY@EMAIL.ADDRESS" },
+  { name="MY_NAME", email="alex@bodywork.com" },
 ]
 dependencies = []
 
@@ -26,10 +26,16 @@ deploy = [
   "twine>=4.0.0",
   "wheel>=0.41.0",
 ]
+docs = [
+  "mkdocs==1.5.3",
+  "mkdocstrings[python]==0.24.1",
+  "mkdocs-material==9.5.15",
+]
 
 [project.urls]
-"Homepage" = "LINK_TO_GITHUB_REPO"
-"Bug Tracker" = "LINK_TO_GITHUB_REPO_ISSUES_PAGE"
+"Homepage" = "https://github.com/AlexIoannides/llm-toolz"
+"Bug Tracker" = "https://github.com/AlexIoannides/llm-toolz/issues"
+"Docs" = "http://alexioannides.com/llm-toolz/"
 
 [build-system]
 requires = ["setuptools>=68.0"]
