@@ -1,0 +1,45 @@
+site_name: llm-toolz
+copyright: Copyright &copy; 2024 Alex Ioannides
+repo_url: https://github.com/AlexIoannides/llm-toolz
+repo_name: alexioannides/llm-toolz
+docs_dir: docs
+site_dir: docs_build
+
+nav:
+  - About: index.md
+  - API: api.md
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: pink
+  features:
+    - navigation.indexes
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+  icon:
+    logo: octicons/terminal-24
+
+plugins:
+  - mkdocstrings
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - toc:
+      permalink: true
+      toc_depth: 2
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
