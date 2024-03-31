@@ -62,3 +62,11 @@ def build_and_deploy(session: nox.Session):
     session.run("rm", "-rf", "dist")
     session.run("python", "-m", "build")
     session.run("twine", "upload", "dist/*", "-u", PYPI_USR, "-p", PYPI_PWD)
+
+
+@nox.session(python=PYTHON, reuse_venv=True)
+def build_and_deploy_docs(session: nox.Session):
+    """Deploy docs to GitHub Pages."""
+    session.install(".[docs]")
+    session.run("mkdocs", "gh-deploy")
+    session.run("rm", "-rf", "docs_build")
