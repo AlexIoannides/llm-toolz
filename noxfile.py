@@ -5,6 +5,7 @@ import nox
 
 PYTHON = ["3.12"]
 
+nox.options.default_venv_backend = "uv|virtualenv"
 nox.options.sessions = [
     "check_code_formatting",
     "check_types",
