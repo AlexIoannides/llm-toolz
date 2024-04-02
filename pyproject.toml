@@ -6,7 +6,10 @@ readme = "README.md"
 authors = [
   { name="MY_NAME", email="alex@bodywork.com" },
 ]
-dependencies = []
+dependencies = [
+  "torch=2.2.2",
+  "tiktoken=0.6.0",
+]
 
 [project.optional-dependencies]
 dev = [
