@@ -5,6 +5,7 @@ import nox
 
 PYTHON = ["3.12"]
 
+nox.options.default_venv_backend = "uv|virtualenv"
 nox.options.sessions = [
     "check_code_formatting",
     "check_types",
@@ -62,3 +63,11 @@ def build_and_deploy(session: nox.Session):
     session.run("rm", "-rf", "dist")
     session.run("python", "-m", "build")
     session.run("twine", "upload", "dist/*", "-u", PYPI_USR, "-p", PYPI_PWD)
+
+
+@nox.session(python=PYTHON, reuse_venv=True)
+def build_and_deploy_docs(session: nox.Session):
+    """Deploy docs to GitHub Pages."""
+    session.install(".[docs]")
+    session.run("mkdocs", "gh-deploy")
+    session.run("rm", "-rf", "docs_build")

@@ -6,7 +6,10 @@ readme = "README.md"
 authors = [
   { name="MY_NAME", email="alex@bodywork.com" },
 ]
-dependencies = []
+dependencies = [
+  "torch==2.2.2",
+  "tiktoken==0.6.0",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -15,7 +18,7 @@ dev = [
   "icecream",
   "ipython",
   "mypy==1.5.1",
-  "nox==2023.4.22",
+  "nox==2024.3.2",
   "pytest==7.4.2",
   "ruff==0.0.290",
 ]
